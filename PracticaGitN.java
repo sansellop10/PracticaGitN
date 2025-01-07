@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class PracticaGitN
 {
     public static void main(String[] args)
@@ -10,15 +11,21 @@ public class PracticaGitN
         int columnas = in.nextInt();
 
         int[][] matriz = new int[columnas][filas];
-        int indice=0;
-        for(int i = 0; i<columnas;i++){
-            for(int j = 0; j<filas; j++){
-                indice ++;
+        int indice = 0;
+        int suma = 0;
+        
+        for(int i = 0; i < columnas; i++){
+            for(int j = 0; j < filas; j++){
+                indice++;
                 matriz[i][j] = indice;
-                System.out. print(" "+matriz[i][j]+ " ");
+                suma += matriz[i][j];
+                System.out.print(" " + matriz[i][j] + " ");
             }
             System.out.println();
         }
+
+        double promedio = (double) suma / (columnas * filas);
+        System.out.println("El promedio de todos los números es: " + promedio);
+        in.close();
     }
 }
-
